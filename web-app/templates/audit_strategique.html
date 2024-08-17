@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <title></title>
+    <meta content="" name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static',filename='css/stepper.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static',filename='css/navbar.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static',filename='css/audit_strategique.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="{{ url_for('static',filename='js/stepper.js')}}"></script>
+    {% include 'navbar.html' %}
+    <div class="main-container">
+      <div id="header">Bonjour <span id="blue">, Mr Mehdi .</span></div>
+      <div class="start-button hidden">Start audit</div>
+      <div class="audit">
+        <div class="audits-list">
+          <div class="audit-item" id="audit-strat">
+            <a href="/audit_strategique">1. Audit Stratégique</a>
+          </div>
+          <div class="audit-item">
+            <a href="/audit_digitale">2. Audit Digitale </a>
+          </div>
+          <div class="audit-item">3. Audit Culturellle</div>
+        </div>
+        <div class="question-list">
+          <!-- Question 1 -->
+          <div class="question-box" id="q1">
+            <p class="question">Question 1</p>
+            <p class="question-text">
+              En quoi votre entreprise est différente de vos concurrents ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Marketing</div>
+              <div onclick="fillAnswer(this)">Compréhension des clients</div>
+              <div onclick="fillAnswer(this)">Bonne image de marque</div>
+              <div onclick="fillAnswer(this)">Autre</div>
+            </div>
+          </div>
+          <!-- Question 2 -->
+          <div class="question-box hidden" id="q2">
+            <p class="question">Question 2</p>
+            <p class="question-text">
+              Avez-vous un avantage concurrentiel durable ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+            </div>
+          </div>
+          <!-- Question 3 -->
+          <div class="question-box hidden" id="q3">
+            <p class="question">Question 3</p>
+            <p class="question-text">
+              Est-ce que votre entreprise a des relations exclusives avec des
+              fournisseurs ou des distributeurs ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+            </div>
+          </div>
+          <!-- Question 4 -->
+          <div class="question-box hidden" id="q4">
+            <p class="question">Question 4</p>
+            <p class="question-text">
+              Pouvez-vous facilement obtenir des capitaux supplémentaires si
+              vous en avez besoin ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Facile</div>
+              <div onclick="fillAnswer(this)">Difficile</div>
+              <div onclick="fillAnswer(this)">Très facile</div>
+            </div>
+          </div>
+          <!-- Question 5 -->
+          <div class="question-box hidden" id="q5">
+            <p class="question">Question 5</p>
+            <p class="question-text">
+              Avez-vous une base de clientèle solide ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+            </div>
+          </div>
+          <!-- Question 6 -->
+          <div class="question-box hidden" id="q6">
+            <p class="question">Question 6</p>
+            <p class="question-text">
+              Quelles sont les choses que vos clients disent que vous faites
+              vraiment bien ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Marketing</div>
+              <div onclick="fillAnswer(this)">Compréhension des clients</div>
+              <div onclick="fillAnswer(this)">Bonne image de marque</div>
+              <div onclick="fillAnswer(this)">Autre</div>
+            </div>
+          </div>
+          <!-- Question 7 -->
+          <div class="question-box hidden" id="q7">
+            <p class="question">Question 7</p>
+            <p class="question-text">
+              Dans quels domaines devez-vous améliorer ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Marketing digital</div>
+              <div onclick="fillAnswer(this)">
+                Utiliser les nouvelles technologies
+              </div>
+              <div onclick="fillAnswer(this)">
+                Améliorer la communication avec les clients
+              </div>
+              <div onclick="fillAnswer(this)">
+                Trouver de nouvelles occasions
+              </div>
+            </div>
+          </div>
+          <!-- Question 8 -->
+          <div class="question-box hidden" id="q8">
+            <p class="question">Question 8</p>
+            <p class="question-text">
+              Dans quels domaines vos concurrents sont-ils meilleurs que vous ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Rehausser l'image de marque</div>
+              <div onclick="fillAnswer(this)">Marketing digital</div>
+              <div onclick="fillAnswer(this)">
+                Utiliser les nouvelles technologies
+              </div>
+              <div onclick="fillAnswer(this)">
+                Améliorer la communication avec les clients
+              </div>
+            </div>
+          </div>
+          <!-- Question 9 -->
+          <div class="question-box hidden" id="q9">
+            <p class="question">Question 9</p>
+            <p class="question-text">Combien de dette avez-vous ?</p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Beaucoup</div>
+              <div onclick="fillAnswer(this)">Moyenne</div>
+              <div onclick="fillAnswer(this)">Peu</div>
+              <div onclick="fillAnswer(this)">Très peu</div>
+              <div onclick="fillAnswer(this)">Énormément</div>
+            </div>
+          </div>
+          <!-- Question 10 -->
+          <div class="question-box hidden" id="q10">
+            <p class="question">Question 10</p>
+            <p class="question-text">
+              Combien de plaintes recevez-vous de vos clients ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Beaucoup</div>
+              <div onclick="fillAnswer(this)">Moyenne</div>
+              <div onclick="fillAnswer(this)">Peu</div>
+              <div onclick="fillAnswer(this)">Très peu</div>
+            </div>
+          </div>
+          <!-- Question 11 -->
+          <div class="question-box hidden" id="q11">
+            <p class="question">Question 11</p>
+            <p class="question-text">
+              Avez-vous des technologies ou des équipements qui doivent être mis
+              à jour ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Oui</div>
+            </div>
+          </div>
+          <!-- Question 12 -->
+          <div class="question-box hidden" id="q12">
+            <p class="question">Question 12</p>
+            <p class="question-text">Manquez-vous de personnel ?</p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Un peu</div>
+              <div onclick="fillAnswer(this)">Non</div>
+            </div>
+          </div>
+          <!-- Question 13 -->
+          <div class="question-box hidden" id="q13">
+            <p class="question">Question 13</p>
+            <p class="question-text">Avez-vous des problèmes de trésorerie ?</p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Un peu</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Très supérieures</div>
+              <div onclick="fillAnswer(this)">Supérieures</div>
+            </div>
+          </div>
+          <!-- Question 14 -->
+          <div class="question-box hidden" id="q14">
+            <p class="question">Question 14</p>
+            <p class="question-text">
+              Est-ce que vos marges bénéficiaires sont inférieures à celles de
+              vos concurrents ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Légales</div>
+              <div onclick="fillAnswer(this)">Inférieures</div>
+              <div onclick="fillAnswer(this)">Très inférieures</div>
+            </div>
+          </div>
+          <!-- Question 15 -->
+          <div class="question-box hidden" id="q15">
+            <p class="question">Question 15</p>
+            <p class="question-text">
+              Y a-t-il des talents disponibles que vous pourriez embaucher ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Oui</div>
+            </div>
+          </div>
+          <!-- Question 16 -->
+          <div class="question-box hidden" id="q16">
+            <p class="question">Question 16</p>
+            <p class="question-text">
+              Y a-t-il un besoin dans l'industrie que vous ne satisfaites pas,
+              mais que vous pourriez satisfaire ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Quelques besoins</div>
+              <div onclick="fillAnswer(this)">Non</div>
+            </div>
+          </div>
+          <!-- Question 17 -->
+          <div class="question-box hidden" id="q17">
+            <p class="question">Question 17</p>
+            <p class="question-text">
+              Pouvez-vous conditionner vos produits/services différemment et
+              fixer un prix plus élevé ?
+            </p>
+            <input
+              id=""
+              name=""
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <!-- TODO change the action -->
+              <div class="suivant" onclick="submitAnswers()">
+                Afficher Resultat
+              </div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+            </div>
+          </div>
+          <div class="result-box hidden" id="result-box">
+            <h2>Résultats de l'audit stratégique :</h2>
+            <div id="result-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var currentQuestion = 1;
+      const totalQuestions = 17;
+
+      function showNext() {
+        if (currentQuestion < totalQuestions) {
+          document
+            .getElementById(`q${currentQuestion}`)
+            .classList.add("hidden");
+          currentQuestion++;
+          document
+            .getElementById(`q${currentQuestion}`)
+            .classList.remove("hidden");
+        }
+      }
+
+      function showPrev() {
+        if (currentQuestion > 1) {
+          document
+            .getElementById(`q${currentQuestion}`)
+            .classList.add("hidden");
+          currentQuestion--;
+          document
+            .getElementById(`q${currentQuestion}`)
+            .classList.remove("hidden");
+        }
+      }
+
+      function fillAnswer(element) {
+        const answer = element.textContent;
+        const input = element.closest(".question-box").querySelector("input");
+        input.value = answer;
+      }
+
+      function submitAnswers() {
+        const questions = document.querySelectorAll(".question-box");
+        const questionsList = [];
+        const answersList = [];
+
+        questions.forEach((question) => {
+          const questionText = question
+            .querySelector(".question-text")
+            .textContent.trim();
+          const answer = question.querySelector("input").value;
+
+          questionsList.push(questionText);
+          answersList.push(answer);
+        });
+        document.getElementById(`q${currentQuestion}`).classList.add("hidden");
+
+        fetch("/audit_strategique", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            questions: questionsList,
+            answers: answersList,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+            displayResults(data.data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+      function displayResults(data) {
+        const resultBox = document.getElementById("result-box");
+        const resultContent = document.getElementById("result-content");
+
+        resultContent.innerHTML = "";
+
+        for (const [key, value] of Object.entries(data)) {
+          const resultItem = document.createElement("p");
+          resultItem.textContent = `${key}: ${value.toFixed(2)}`;
+          resultContent.appendChild(resultItem);
+        }
+
+        resultBox.classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>

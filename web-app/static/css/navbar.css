@@ -1,0 +1,82 @@
+.navbar-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 7rem;
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px rgb(0, 0, 0);
+  z-index: 1000;
+  display: flex;
+}
+.brand {
+  margin-left: 4rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+#brand-img {
+  width: 5rem;
+  height: 5rem;
+}
+#brand-txt {
+  font-size: 20px;
+  color: #1863b0;
+}
+#blue {
+  color: #5fb0dd;
+}
+.nav-menu {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: end;
+  gap: 5rem;
+  margin-right: 5rem;
+  font-size: 1.1rem;
+}
+
+.nav-item.i {
+  color: #1863b0;
+  font-weight: medium;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.nav-item.i:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 4px 0px rgba(24, 99, 176, 0.5);
+}
+#signout {
+  background-color: #1863b0;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#signout > img {
+  height: 2rem;
+  width: 2rem;
+}
+
+#signout:hover {
+  background-color: #145a90;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#signout:active {
+  background-color: #0e4370;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

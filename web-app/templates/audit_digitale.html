@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <title></title>
+    <meta content="" name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static',filename='css/stepper.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static',filename='css/navbar.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static',filename='css/audit_strategique.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="stepper.js"></script>
+    {% include 'navbar.html' %}
+    <div class="main-container">
+      <div id="header">Bonjour <span id="blue">, Mr Mehdi.</span></div>
+      <div class="start-button hidden">Start audit</div>
+      <div class="audit">
+        <div class="audits-list">
+          <div class="audit-item">
+            <a href="/audit_strategique">1. Audit Stratégique</a>
+          </div>
+          <div class="audit-item" id="audit-strat">
+            <a href="/audit_digitale">2. Audit Digitale</a>
+          </div>
+          <div class="audit-item">3. Audit Culturelle</div>
+        </div>
+        <div class="question-list">
+          <!-- Digital Strategy Questions -->
+          <div class="question-box" id="q1">
+            <p class="question">Digital Strategy</p>
+            <p class="question-text">
+              Votre entreprise a-t-elle une stratégie digitale clairement
+              définie ?
+            </p>
+            <input
+              id="q1a"
+              name="q1"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">En cours de définition</div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q2">
+            <p class="question">Digital Strategy</p>
+            <p class="question-text">
+              Avez-vous fixé des objectifs mesurables pour votre stratégie
+              digitale ?
+            </p>
+            <input
+              id="q2a"
+              name="q2"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Partiellement</div>
+            </div>
+          </div>
+          <!-- Repeat for remaining questions -->
+
+          <!-- Question 3 -->
+          <div class="question-box hidden" id="q3">
+            <p class="question">Digital Strategy</p>
+            <p class="question-text">
+              Est-ce que votre entreprise suit les tendances technologiques et
+              numériques ?
+            </p>
+            <input
+              id="q3a"
+              name="q3"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Occasionnellement</div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question-box hidden" id="q4">
+            <p class="question">Digital Strategy</p>
+            <p class="question-text">
+              Avez-vous alloué un budget spécifique pour les initiatives
+              digitales ?
+            </p>
+            <input
+              id="q4a"
+              name="q4"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Insuffisant</div>
+            </div>
+          </div>
+
+          <!-- Digital Marketing Questions -->
+          <div class="question-box hidden" id="q5">
+            <p class="question">Digital Marketing</p>
+            <p class="question-text">
+              Votre entreprise utilise-t-elle des outils de marketing automation
+              ?
+            </p>
+            <input
+              id="q5a"
+              name="q5"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">
+                Prévu mais pas encore implémenté
+              </div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q6">
+            <p class="question">Digital Marketing</p>
+            <p class="question-text">
+              Avez-vous une stratégie de contenu pour votre blog ou site web ?
+            </p>
+            <input
+              id="q6a"
+              name="q6"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Partielle</div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q7">
+            <p class="question">Digital Marketing</p>
+            <p class="question-text">
+              Est-ce que vous mesurez régulièrement l'efficacité de vos
+              campagnes marketing digitales ?
+            </p>
+            <input
+              id="q7a"
+              name="q7"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Occasionnellement</div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q8">
+            <p class="question">Digital Marketing</p>
+            <p class="question-text">
+              Votre entreprise utilise-t-elle des techniques de ciblage
+              publicitaire avancées comme le retargeting ?
+            </p>
+            <input
+              id="q8a"
+              name="q8"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Occasionnellement</div>
+            </div>
+          </div>
+
+          <!-- Repeat for remaining questions -->
+
+          <!-- Digital Transformation Questions -->
+          <div class="question-box hidden" id="q9">
+            <p class="question">Digital Transformation</p>
+            <p class="question-text">
+              Avez-vous intégré des outils numériques pour améliorer vos
+              processus internes ?
+            </p>
+            <input
+              id="q9a"
+              name="q9"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Partiellement</div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q10">
+            <p class="question">Digital Transformation</p>
+            <p class="question-text">
+              Est-ce que vos employés sont formés aux nouvelles technologies et
+              outils digitaux ?
+            </p>
+            <input
+              id="q10a"
+              name="q10"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Partiellement</div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q11">
+            <p class="question">Digital Transformation</p>
+            <p class="question-text">
+              Utilisez-vous des solutions cloud pour vos opérations ?
+            </p>
+            <input
+              id="q11a"
+              name="q11"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Partiellement</div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q12">
+            <p class="question">Digital Transformation</p>
+            <p class="question-text">
+              Votre entreprise a-t-elle un plan de transformation digitale en
+              cours ?
+            </p>
+            <input
+              id="q12a"
+              name="q12"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Partiellement</div>
+            </div>
+          </div>
+
+          <!-- Repeat for remaining questions -->
+
+          <!-- Digital Customer Experience Questions -->
+          <div class="question-box hidden" id="q13">
+            <p class="question">Digital Customer Experience</p>
+            <p class="question-text">
+              Votre site web offre-t-il une expérience utilisateur optimisée ?
+            </p>
+            <input
+              id="q13a"
+              name="q13"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">Partiellement</div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q14">
+            <p class="question">Digital Customer Experience</p>
+            <p class="question-text">
+              Utilisez-vous des outils d'analyse pour comprendre le comportement
+              des utilisateurs ?
+            </p>
+            <input
+              id="q14a"
+              name="q14"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">
+                Prévu mais pas encore implémenté
+              </div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q15">
+            <p class="question">Digital Customer Experience</p>
+            <p class="question-text">
+              Utilisez-vous des chatbots ou assistants virtuels pour améliorer
+              le support client ?
+            </p>
+            <input
+              id="q15a"
+              name="q15"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="showNext()">suivant</div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">
+                Prévu mais pas encore implémenté
+              </div>
+            </div>
+          </div>
+          <div class="question-box hidden" id="q16">
+            <p class="question">Digital Customer Experience</p>
+            <p class="question-text">
+              Est-ce que vous recueillez et analysez régulièrement les feedbacks
+              des clients pour améliorer vos services ?
+            </p>
+            <input
+              id="q16a"
+              name="q16"
+              placeholder="saisir votre réponse ..."
+              type="text"
+            />
+            <div class="precedent-suivant">
+              <div class="precedent" onclick="showPrev()">précedent</div>
+              <div class="suivant" onclick="submitAnswers()">
+                afficher resultat
+              </div>
+            </div>
+            <div class="reponse-ref">
+              <div onclick="fillAnswer(this)">Oui</div>
+              <div onclick="fillAnswer(this)">Non</div>
+              <div onclick="fillAnswer(this)">de temps en temps</div>
+            </div>
+          </div>
+          <div class="result-box hidden" id="result-box">
+            <h2>Résultats de l'audit digitale :</h2>
+            <div id="result-content"></div>
+            <img id="radar_chart" />
+          </div>
+          <!-- Repeat for remaining questions -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showNext() {
+        const current = document.querySelector(".question-box:not(.hidden)");
+        const next = current.nextElementSibling;
+        if (next) {
+          current.classList.add("hidden");
+          next.classList.remove("hidden");
+        }
+      }
+
+      function showPrev() {
+        const current = document.querySelector(".question-box:not(.hidden)");
+        const prev = current.previousElementSibling;
+        if (prev) {
+          current.classList.add("hidden");
+          prev.classList.remove("hidden");
+        }
+      }
+
+      function fillAnswer(element) {
+        const input = element.closest(".question-box").querySelector("input");
+        input.value = element.textContent;
+      }
+      function submitAnswers() {
+        const inputs = document.querySelectorAll("input");
+        const answers = [];
+        inputs.forEach((input) => {
+          answers.push(input.value.trim());
+        });
+        fetch("/audit_digitale", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            answers: answers,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+            displayResults(data.data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+      function displayResults(data) {
+        const lastQuestion = document.getElementById("q16");
+        lastQuestion.classList.add("hidden");
+        const resultBox = document.getElementById("result-box");
+        const resultContent = document.getElementById("result-content");
+
+        resultContent.innerHTML = "";
+
+        for (const [key, value] of Object.entries(data)) {
+          const resultItem = document.createElement("p");
+          resultItem.textContent = `${key}: ${value.toFixed(2)}`;
+          resultContent.appendChild(resultItem);
+        }
+
+        resultBox.classList.remove("hidden");
+        const img = document.getElementById("radar_chart");
+        img.src = "{{ url_for('static',filename='scores_plot.png')}}";
+      }
+    </script>
+  </body>
+</html>

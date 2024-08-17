@@ -1,0 +1,49 @@
+Axis,Question,ID,Response,Score
+Digital Strategy,Votre entreprise a-t-elle une stratégie digitale clairement définie ?,1,Oui,10
+Digital Strategy,Votre entreprise a-t-elle une stratégie digitale clairement définie ?,1,Non,0
+Digital Strategy,Votre entreprise a-t-elle une stratégie digitale clairement définie ?,1,En cours de définition,5
+Digital Strategy,Avez-vous fixé des objectifs mesurables pour votre stratégie digitale ?,2,Oui,10
+Digital Strategy,Avez-vous fixé des objectifs mesurables pour votre stratégie digitale ?,2,Non,0
+Digital Strategy,Avez-vous fixé des objectifs mesurables pour votre stratégie digitale ?,2,Partiellement,5
+Digital Strategy,Est-ce que votre entreprise suit les tendances technologiques et numériques ?,3,Oui,10
+Digital Strategy,Est-ce que votre entreprise suit les tendances technologiques et numériques ?,3,Non,0
+Digital Strategy,Est-ce que votre entreprise suit les tendances technologiques et numériques ?,3,Occasionnellement,5
+Digital Strategy,Avez-vous alloué un budget spécifique pour les initiatives digitales ?,4,Oui,10
+Digital Strategy,Avez-vous alloué un budget spécifique pour les initiatives digitales ?,4,Non,0
+Digital Strategy,Avez-vous alloué un budget spécifique pour les initiatives digitales ?,4,Insuffisant,5
+Digital Marketing,Votre entreprise utilise-t-elle des outils de marketing automation ?,5,Oui,10
+Digital Marketing,Votre entreprise utilise-t-elle des outils de marketing automation ?,5,Non,0
+Digital Marketing,Votre entreprise utilise-t-elle des outils de marketing automation ?,5,Prévu mais pas encore implémenté,5
+Digital Marketing,Avez-vous une stratégie de contenu pour votre blog ou site web ?,6,Oui,10
+Digital Marketing,Avez-vous une stratégie de contenu pour votre blog ou site web ?,6,Non,0
+Digital Marketing,Avez-vous une stratégie de contenu pour votre blog ou site web ?,6,Partielle,5
+Digital Marketing,Est-ce que vous mesurez régulièrement l'efficacité de vos campagnes marketing digitales ?,7,Oui,10
+Digital Marketing,Est-ce que vous mesurez régulièrement l'efficacité de vos campagnes marketing digitales ?,7,Non,0
+Digital Marketing,Est-ce que vous mesurez régulièrement l'efficacité de vos campagnes marketing digitales ?,7,De temps en temps,5
+Digital Marketing,Votre entreprise utilise-t-elle des techniques de ciblage publicitaire avancées comme le retargeting ?,8,Oui,10
+Digital Marketing,Votre entreprise utilise-t-elle des techniques de ciblage publicitaire avancées comme le retargeting ?,8,Non,0
+Digital Marketing,Votre entreprise utilise-t-elle des techniques de ciblage publicitaire avancées comme le retargeting ?,8,Prévu mais pas encore implémenté,5
+Digital Transformation,Avez-vous intégré des outils numériques pour améliorer vos processus internes ?,9,Oui,10
+Digital Transformation,Avez-vous intégré des outils numériques pour améliorer vos processus internes ?,9,Non,0
+Digital Transformation,Avez-vous intégré des outils numériques pour améliorer vos processus internes ?,9,Partiellement,5
+Digital Transformation,Est-ce que vos employés sont formés aux nouvelles technologies et outils digitaux ?,10,Oui,10
+Digital Transformation,Est-ce que vos employés sont formés aux nouvelles technologies et outils digitaux ?,10,Non,0
+Digital Transformation,Est-ce que vos employés sont formés aux nouvelles technologies et outils digitaux ?,10,Partiellement,5
+Digital Transformation,Utilisez-vous des solutions cloud pour vos opérations ?,11,Oui,10
+Digital Transformation,Utilisez-vous des solutions cloud pour vos opérations ?,11,Non,0
+Digital Transformation,Utilisez-vous des solutions cloud pour vos opérations ?,11,Partiellement,5
+Digital Transformation,Votre entreprise a-t-elle un plan de transformation digitale en cours ?,12,Oui,10
+Digital Transformation,Votre entreprise a-t-elle un plan de transformation digitale en cours ?,12,Non,0
+Digital Transformation,Votre entreprise a-t-elle un plan de transformation digitale en cours ?,12,Prévu mais pas encore implémenté,5
+Digital Customer Experience,Votre site web offre-t-il une expérience utilisateur optimisée ?,13,Oui,10
+Digital Customer Experience,Votre site web offre-t-il une expérience utilisateur optimisée ?,13,Non,0
+Digital Customer Experience,Votre site web offre-t-il une expérience utilisateur optimisée ?,13,Partiellement,5
+Digital Customer Experience,Avez-vous mis en place des outils de gestion de la relation client (CRM) ?,14,Oui,10
+Digital Customer Experience,Avez-vous mis en place des outils de gestion de la relation client (CRM) ?,14,Non,0
+Digital Customer Experience,Avez-vous mis en place des outils de gestion de la relation client (CRM) ?,14,Prévu mais pas encore implémenté,5
+Digital Customer Experience,Utilisez-vous des chatbots ou assistants virtuels pour améliorer le support client ?,15,Oui,10
+Digital Customer Experience,Utilisez-vous des chatbots ou assistants virtuels pour améliorer le support client ?,15,Non,0
+Digital Customer Experience,Utilisez-vous des chatbots ou assistants virtuels pour améliorer le support client ?,15,Prévu mais pas encore implémenté,5
+Digital Customer Experience,Est-ce que vous recueillez et analysez régulièrement les feedbacks des clients pour améliorer vos services ?,16,Oui,10
+Digital Customer Experience,Est-ce que vous recueillez et analysez régulièrement les feedbacks des clients pour améliorer vos services ?,16,Non,0
+Digital Customer Experience,Est-ce que vous recueillez et analysez régulièrement les feedbacks des clients pour améliorer vos services ?,16,De temps en temps,5
